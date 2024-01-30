@@ -1,0 +1,20 @@
+{
+  "name": "flow_assignment",
+  "version": "1.0.0",
+  "description": "플로우 과제 전형 ",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Hong minyeong",
+    "email": "minyung1240@khu.ac.kr"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  }
+}

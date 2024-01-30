@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./index.js" defer></script>
+    <title>파일 확장자 차단</title>
+  </head>
+  <body>
+    <h1>안녕하세용</h1>
+    <div>
+      <table>
+        <tbody>
+          <tr>
+            <th>고정 확장자</th>
+            <td>
+              <div class="input_wrap">
+                <div>
+                  <input
+                    type="checkbox"
+                    id="bat"
+                    value="bat"
+                    class="input_list"
+                  />
+                  <label for="bat">bat</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="cmd"
+                    value="cmd"
+                    class="input_list"
+                  />
+                  <label for="cmd">cmd</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="com"
+                    value="com"
+                    class="input_list"
+                  />
+                  <label for="com">com</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="cpl"
+                    value="cpl"
+                    class="input_list"
+                  />
+                  <label for="cpl">cpl</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="exe"
+                    value="exe"
+                    class="input_list"
+                  />
+                  <label for="exe">exe</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="scr"
+                    value="scr"
+                    class="input_list"
+                  />
+                  <label for="scr">scr</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    id="js"
+                    value="js"
+                    class="input_list"
+                  />
+                  <label for="js">js</label>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th rowspan="2">커스텀 확장자</th>
+            <td>
+              <input
+                type="text"
+                class="input_value"
+                maxlength="20"
+                placeholder="확장자 입력"
+              />
+              <button class="button" type="button">+추가</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="extension_blocking">
+                <div class="length_wrap">
+                  <span class="current_length"></span>
+                  <span>/</span>
+                  <span>200</span>
+                </div>
+                <div class="extension_list"></div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+table {
+  width: 100%;
+  display: block;
+}
+
+table th {
+  width: 150px;
+  text-align: left;
+  vertical-align: top;
+  padding: 4px;
+}
+
+.input_wrap {
+  display: flex;
+  gap: 8px;
+}
+
+.input_wrap > div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.extension_blocking {
+  width: 600px;
+  min-height: 300px;
+  border: 1px solid;
+}
+
+.length_wrap {
+  margin: 8px;
+}
+
+.db_btn {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.db_wrap {
+  padding: 4px 8px;
+  border: 1px solid;
+  border-radius: 4px;
+  margin: 8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.extension_list {
+  display: flex;
+  flex-wrap: wrap;
+}
