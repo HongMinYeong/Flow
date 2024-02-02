@@ -5,7 +5,7 @@ const $inputList = document.querySelectorAll('.input_list');
 
 const BASE_URL = 'http://localhost:8001/blocking';
 
-document.addEventListener('keydown', function (event) {
+document.addEventListener('keypress', function (event) {
   // 엔터 키가 눌렸을 때 동작을 여기에 추가
   if (event.key === 'Enter') {
     document.getElementById('addButton').click(); // 버튼 클릭 이벤트 호출
@@ -137,7 +137,6 @@ function deleteItem(data) {
 
 // 바로 실행 함수,, 디비 값으로 초기 화면 만들어줌
 (async function display() {
-  console.log('실행');
   try {
     const res = await axios.get(BASE_URL);
     const data = res.data;
