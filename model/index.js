@@ -72,3 +72,16 @@ exports.postBlocking = (data, callback) => {
     }
   });
 };
+
+//DELETE
+exports.deleteBlocking = (data, callback) => {
+  const { name } = data;
+  conn.query(`delete from blocking where extension="${name}"`, (err, rows) => {
+    if (err) {
+      console.error(err);
+      callback({ result: false, msg: err });
+    } else {
+      callback({ result: true, msg: '성공적으로 삭제되었습니다. ' });
+    }
+  });
+};

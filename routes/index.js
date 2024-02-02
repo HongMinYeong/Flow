@@ -4,5 +4,5 @@ const router = express.Router();
 
 router.get('/blocking', controller.getAllBlocking);
 router.post('/blocking', controller.postBlocking);
-// router.delete('/blocking', controller.deleteBlocking);
+router.delete('/blocking', controller.deleteBlocking);
 module.exports = router;

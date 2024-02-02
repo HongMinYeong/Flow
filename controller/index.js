@@ -13,3 +13,9 @@ exports.postBlocking = (req, res) => {
     res.send(result);
   });
 };
+
+exports.deleteBlocking = (req, res) => {
+  Model.deleteBlocking(req.body, (result) => {
+    res.send(result);
+  });
+};
