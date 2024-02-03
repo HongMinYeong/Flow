@@ -2,8 +2,9 @@ const $submitBtn = document.querySelector('.button');
 const $extensionBlockingList = document.querySelector('.extension_list');
 const $currentLength = document.querySelector('.current_length');
 const $inputList = document.querySelectorAll('.input_list');
+const attachment = document.getElementById('attachment');
 
-const BASE_URL = 'http://localhost:8001/blocking';
+const BASE_URL = 'http://localhost/blocking';
 
 document.addEventListener('keypress', function (event) {
   // 엔터 키가 눌렸을 때 동작을 여기에 추가
@@ -11,6 +12,25 @@ document.addEventListener('keypress', function (event) {
     document.getElementById('addButton').click(); // 버튼 클릭 이벤트 호출
   }
 });
+
+async function fileUpload() {
+  const file = attachment;
+  const formData = new FormData();
+
+  formData.append('attachment', file.files[0]);
+  try {
+    const res = await axios.post('http://localhost/file', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+    alert(`${res.data}`);
+  } catch (err) {
+    console.error(err);
+    alert(`파일 업로드 실패: ${err.message}`);
+    // return false;
+  }
+}
 
 // return true, false를 넣은 것은 다음 로직을 실행하기 위함
 async function createItemRequest(value) {
@@ -140,8 +160,6 @@ function deleteItem(data) {
   try {
     const res = await axios.get(BASE_URL);
     const data = res.data;
-    console.log(data);
-
     // db에 있는 값이면 체크박스에 표시
     $inputList.forEach((item) => {
       data.forEach((dbItem) => {
