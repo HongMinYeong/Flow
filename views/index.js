@@ -4,7 +4,7 @@ const $currentLength = document.querySelector('.current_length');
 const $inputList = document.querySelectorAll('.input_list');
 const attachment = document.getElementById('attachment');
 
-const BASE_URL = 'http://localhost/blocking';
+const BASE_URL = 'http://54.180.95.82';
 
 document.addEventListener('keypress', function (event) {
   // 엔터 키가 눌렸을 때 동작을 여기에 추가
@@ -19,7 +19,7 @@ async function fileUpload() {
 
   formData.append('attachment', file.files[0]);
   try {
-    const res = await axios.post('http://localhost/file', formData, {
+    const res = await axios.post(`${BASE_URL}/file`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -35,7 +35,7 @@ async function fileUpload() {
 // return true, false를 넣은 것은 다음 로직을 실행하기 위함
 async function createItemRequest(value) {
   try {
-    const res = await axios.post(BASE_URL, {
+    const res = await axios.post(`${BASE_URL}/blocking`, {
       name: value,
     });
     const data = res.data;
@@ -56,7 +56,7 @@ async function createItemRequest(value) {
 // return true, false를 넣은 것은 다음 로직을 실행하기 위함
 async function deleteItemRequest(value) {
   try {
-    const res = await axios.delete(BASE_URL, {
+    const res = await axios.delete(`${BASE_URL}/blocking`, {
       data: { name: value },
     });
     const data = res.data;
@@ -158,7 +158,7 @@ function deleteItem(data) {
 // 바로 실행 함수,, 디비 값으로 초기 화면 만들어줌
 (async function display() {
   try {
-    const res = await axios.get(BASE_URL);
+    const res = await axios.get(`${BASE_URL}/blocking`);
     const data = res.data;
     // db에 있는 값이면 체크박스에 표시
     $inputList.forEach((item) => {
